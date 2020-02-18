@@ -67,7 +67,7 @@ const Form = props => {
           name="dev"
           component="input"
           type="text"
-          placeholder="Informe o nome do projeto"
+          placeholder="Informe o nome do Desenvolvedor"
           className="form-control"
         />
       </div>
@@ -78,7 +78,7 @@ const Form = props => {
           name="infra"
           component="input"
           type="text"
-          placeholder="Informe o nome do projeto"
+          placeholder="Informe o nome do DEVOPS"
           className="form-control"
         />
       </div>
@@ -88,7 +88,7 @@ const Form = props => {
           name="db"
           component="input"
           type="text"
-          placeholder="Informe o nome do projeto"
+          placeholder="Informe o nome do responsável por Banco de Dados"
           className="form-control"
         />
       </div>
@@ -104,8 +104,7 @@ const Form = props => {
         />
       </div>
 
-      
-
+    
       <div>
       <h4>A seguinte configuração do Load da ferramenta foi usada neste cenário:</h4>
         <ul>

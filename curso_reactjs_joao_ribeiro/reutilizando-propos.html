@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML + REACT com BABEL</title>
+    <title>Reuso dos Props</title>
     <style>
             body {
                 margin-left: 20%;
@@ -20,12 +20,30 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     
     <script type="text/babel">
-        const root=document.getElementById('root');
 
-        let nome = "Ricardo Fahham"
+        function ComponenteA(props) {
+            return(
+                <div>
+                    <p>Nome: {props.nome}</p>
+                </div>
+            ) 
+        }
+
+        function App(){
+            return(
+                <div>
+                    <ComponenteA nome="Ana"/>
+                    <ComponenteA nome="João"/>
+                    <ComponenteA nome="Fernando"/>
+                    <ComponenteA nome="Ricardo"/>
+                </div>
+            )
+        }
+
+
         
-        ReactDOM.render(<h1>Título</h1>, root);
-        ReactDOM.render(<p>O meu nome é {nome}</p>, root)
+        const root=document.getElementById('root');
+        ReactDOM.render(<App/>, root);
 
     </script>
 </body>

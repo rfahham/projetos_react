@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML + REACT com BABEL</title>
+    <title>CSS inline</title>
     <style>
             body {
                 margin-left: 20%;
@@ -20,12 +20,29 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     
     <script type="text/babel">
-        const root=document.getElementById('root');
 
-        let nome = "Ricardo Fahham"
-        
-        ReactDOM.render(<h1>Título</h1>, root);
-        ReactDOM.render(<p>O meu nome é {nome}</p>, root)
+        class App extends React.Component{
+            
+            render(){
+
+                const estilo = {
+                    color: "red",
+                    backgroundColor: "yellow",
+                    padding: "20px"
+                }
+
+                return(
+                    <div>
+                    <h1>Utilizando CSS InLine</h1>
+                    <hr/>
+                        <p style={estilo}>CSS InLine</p>
+                    </div>
+                )
+            }
+        }
+
+        const root = document.getElementById('root');
+        ReactDOM.render(<App/>, root);
 
     </script>
 </body>

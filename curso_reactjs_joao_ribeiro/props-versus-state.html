@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Props X State</title>
+    <style>
+            body {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            constructor(){
+                super()
+                this.state = {
+                    nome : "João"
+                }
+            }
+            
+            render(){
+// Definindo um novo valor para a variável nome
+                this.state.nome = "Ricardo"
+// Utilizando Nome como State
+// Utilizando Idade como Props
+                return(
+                    <div>
+                            <h3>Props X State</h3>
+                        <hr/>
+                        <p>Nome: {this.state.nome}</p>
+                        <p>Idade: {this.props.idade}</p>
+                    </div>
+                )
+            }
+        }
+// Definindo idade como props, mas o valor entra como uma string, não pode ser manipulada.
+        const root = document.getElementById('root');
+        ReactDOM.render(<App idade="45"/>, root);
+
+    </script>
+</body>
+</html>
