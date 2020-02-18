@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>019 - ReactJS - PASSAR ARGUMENTOS DE CHILD PARA PARENT COMPONENT</title>
+    <title>020 - ReactJS - QUATRO FORMAS DE RENDERIZAÇÃO CONDICIONAL</title>
     <style>
             body {
                 background-color: rgb(46, 41, 41);
@@ -24,37 +24,44 @@
     
     <script type="text/babel">
 
-        // PARENT
 
         class App extends React.Component{
 
-            metodo(texto){
-                console.log(texto);
+            // Condição
+            constructor(){
+                super()
+                this.state = {
+                    tempoBom: true
+                }
             }
 
             render(){
+                // short circuit
+                // return this.state.tempoBom && <p>O tempo está bom !</p>
+                
+                // método ternário
                 return(
-                    <div>
-                        <h3>019 - ReactJS - PASSAR ARGUMENTOS DE CHILD PARA PARENT COMPONENT</h3>
-                        <hr/>
-                        <p>Utilizando metodos passando de CHILD para PARENT</p>
-                        <p>O resultado você consegue verificar no console.log = command + alt + J</p>
-                        <Child evento={this.metodo}/>
-                    </div>
+                    this.state.tempoBom ?
+                    <p>O tempo está bom !</p>:
+                    <p>O tempo está mau !</p>
                 )
-            }
-        }
 
-        // CHILD
+                // utilizando uma variável
+                // let texto
+                // if(this.state.tempoBom){
+                //     texto = <p>O tempo está bom !</p>
+                // } else {
+                //     texto = <p>O tempo está mau !</p>
+                // }
+                // return texto
 
-        class Child extends React.Component{
-            render(){
-                return(
-                <div>
-                <p>Para visualizar no console a mensagem: 'Olá Mundo !'</p>
-                    <button onClick={() => this.props.evento('Olá Mundo !')}>Clicar</button>
-                </div>
-                )
+
+                // if / else
+                // if(this.state.tempoBom){
+                //     return(<p>O tempo está bom !</p>)
+                // } else {
+                //     return(<p>O tempo está mau !</p>)
+                // }
             }
         }
 
