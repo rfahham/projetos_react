@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>021 - ReactJS - RENDERIZAÇÃO DE LISTAS E FUNCAO MAP</title>
+    <style>
+            body {
+                background-color: rgb(46, 41, 41);
+                margin-left: 20%;
+                margin-right: 20%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(209, 208, 208);
+            }
+            form {
+                line-height: 1.5;
+                
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            render(){
+                //ARRAY
+                const relatorios = [{
+                    "name": "Cartola",
+                    "solicitante": "Vinicius",
+                    "email": "vinicius.chagas@g.globo",
+                    "requisitos": "Identificar o Throughput máximo",
+                    "hardware": "TSURU",
+                    "dev": "Vinicius",
+                    "infra": "Alison",
+                    "db": "Thiago Ulle",
+                    "analista": "Ricardo Fahham",
+                }]
+                const final = relatorios.map(relatorio => 
+                <form>
+                Nome do projeto: {relatorio.name}<br/>
+                Nome do Solicitante: {relatorio.solicitante}<br/>
+                E-mail do Solicitante: {relatorio.email}<br/>
+                Requisitos do Negócio: {relatorio.requisitos}<br/>
+                Hardware: {relatorio.hardware}<br/>
+                Nome do Dev: {relatorio.dev}<br/>
+                Nome do DevOps: {relatorio.infra}<br/>
+                Nome do DBA: {relatorio.db}<br/>
+                Nome do Analista de teste: {relatorio.analista}<br/>
+                </form>)
+                return(
+                    <div>
+                    <h3>Relatório</h3>
+                        {final}
+                    </div>
+                )
+            }
+        }
+
+        const root=document.getElementById('root');
+        ReactDOM.render(<App />, root);
+
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>State</title>
+    <title>021 - ReactJS - RENDERIZAÇÃO DE LISTAS E FUNCAO MAP</title>
     <style>
             body {
                 background-color: rgb(46, 41, 41);
@@ -26,29 +26,35 @@
 
         class App extends React.Component{
 
-            constructor(){
-                super()
-
-                this.state = {
-                    nome : "João",
-                    idade : "45"
-                }
-            }
-            
-            
             render(){
-
+                //ARRAY
+                const pessoas = [{
+                        "nome": "Ricardo",
+                        "profissao": "Analista de teste de Performance"
+                    }, {
+                        "nome": "Alessandra",
+                        "profissao": "Advogada"
+                    }, {
+                        "nome": "JR",
+                        "profissao": "Estudante "
+                    }, {
+                        "nome": "JV",
+                        "profissao": "Estudante"
+                    }, {
+                        "nome": "Andreza",
+                        "profissao": "Estudante"
+                }]
+                const final = pessoas.map(pessoa => <h3>{pessoa.nome} exerce a profissão de {pessoa.profissao}</h3>)
                 return(
                     <div>
-                        <p>Nome: {this.state.nome}</p>
-                        <p>Idade: {this.state.idade}</p>
+                        {final}
                     </div>
                 )
             }
         }
 
-        const root = document.getElementById('root');
-        ReactDOM.render(<App/>, root);
+        const root=document.getElementById('root');
+        ReactDOM.render(<App />, root);
 
     </script>
 </body>

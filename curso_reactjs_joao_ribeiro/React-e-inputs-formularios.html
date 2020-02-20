@@ -1,11 +1,13 @@
+<!-- https://www.youtube.com/watch?v=vvnjbng8Z4A -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>State</title>
-    <style>
+    <title></title>
+        <style>
             body {
                 background-color: rgb(46, 41, 41);
                 margin-left: 20%;
@@ -24,32 +26,37 @@
     
     <script type="text/babel">
 
-        class App extends React.Component{
+        class MeuComponente extends React.Component{
 
             constructor(){
                 super()
-
-                this.state = {
-                    nome : "João",
-                    idade : "45"
+                this.state={
+                    nome: "João"
                 }
             }
-            
-            
-            render(){
 
+            alterarNome = (event) => {
+                this.setState({nome: event.target.value})
+            }
+
+            render(){
                 return(
                     <div>
-                        <p>Nome: {this.state.nome}</p>
-                        <p>Idade: {this.state.idade}</p>
+                        <input
+                            type="text"
+                            value={this.state.nome}
+                            onChange={this.alterarNome}
+                        />
+                        <p>Valor: {this.state.nome}</p>
                     </div>
                 )
             }
         }
-
-        const root = document.getElementById('root');
-        ReactDOM.render(<App/>, root);
-
+        const root=document.getElementById('root');
+        ReactDOM.render(<MeuComponente/>, root);
+        
     </script>
 </body>
 </html>
+
+

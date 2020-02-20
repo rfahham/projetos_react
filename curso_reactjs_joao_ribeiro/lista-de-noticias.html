@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>022 - ReactJS - EXEMPLO DE RENDERIZAÇÃO DE LISTAS DE NOTÍCIAS</title>
+    <style>
+            body {
+                background-color: rgb(46, 41, 41);
+                margin-left: 20%;
+                margin-right: 20%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(209, 208, 208);
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            render(){
+
+                const noticias = [
+                {
+                    titulo: "Coberta por argila, Aline Riscado faz ensaio sobre enredo da Vila Isabel",
+                    texto: "O conceito elaborado pelo fotógrafo e maquiador Ygor Marques faz referência à cerâmica marajoara, dos Índios da Ilha do Marajó",
+                    imagem: "Adicionar uma Imagem",
+                    autor: "REDAÇÃO MARIE CLAIRE"
+                },
+                {
+                    titulo: "Brasileiro é o que acorda mais animado para correr, diz pesquisa global",
+                    texto: "Brasil também lidera entre os corredores que adotam a atividade física por motivos de saúde, revela o mais amplo estudo sobre a prática",
+                    imagem: "Adicionar uma Imagem",
+                    autor: "Ana Lucia Azevedo"
+                },
+                {
+                    titulo: "Casal é preso em praia por não consumir nada de barraca na areia",
+                    texto: "Um casal de banhistas foi preso em Mamitas (Playa del Carmen, México), na semana passada, após ser denunciado por não ter consumido nada da barraca de um resort que opera na areia.",
+                    imagem: "Adicionar uma Imagem",
+                    autor: "Fernando Moreira"
+                },
+            ]
+
+            const final = noticias.map(noticia => <Colecao noticia={noticia}/>)
+
+                return(
+                    <div>
+                       <h2>Notícias</h2>
+                       <hr />
+                       {final}
+                    </div>
+                )
+            }
+        }
+
+        class Colecao extends React.Component{
+            constructor(props){
+                super(props)
+            }
+
+            render(){
+                return(
+                    <div>
+                       <h3>{this.props.noticia.titulo}</h3>
+                       <p>{this.props.noticia.texto}</p>
+                       <p>{this.props.noticia.imagem}</p>
+                       <small><i>Autor: {this.props.noticia.autor}</i></small>
+                    </div>
+                )
+            }
+        }
+
+        const root=document.getElementById('root');
+        ReactDOM.render(<App />, root);
+
+    </script>
+</body>
+</html>

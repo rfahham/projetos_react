@@ -1,11 +1,13 @@
+<!-- https://www.youtube.com/watch?v=4m30W1oaSKo -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>State</title>
-    <style>
+    <title>031 - ReactJS - BREVE INTRODUÇÃO AOS LIFECYCLE METHODS</title>
+        <style>
             body {
                 background-color: rgb(46, 41, 41);
                 margin-left: 20%;
@@ -26,30 +28,20 @@
 
         class App extends React.Component{
 
-            constructor(){
-                super()
-
-                this.state = {
-                    nome : "João",
-                    idade : "45"
-                }
-            }
-            
-            
             render(){
-
                 return(
                     <div>
-                        <p>Nome: {this.state.nome}</p>
-                        <p>Idade: {this.state.idade}</p>
+
+                    
                     </div>
                 )
             }
         }
-
-        const root = document.getElementById('root');
+        const root=document.getElementById('root');
         ReactDOM.render(<App/>, root);
-
+        
     </script>
 </body>
 </html>
+
+

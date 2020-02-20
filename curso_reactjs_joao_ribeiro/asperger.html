@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>022 - ReactJS - EXEMPLO DE RENDERIZAÇÃO DE LISTAS DE NOTÍCIAS</title>
+    <style>
+            body {
+                background-color: rgb(46, 41, 41);
+                margin-left: 20%;
+                margin-right: 20%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(209, 208, 208);
+            }
+            p {
+                text-indent: 1.5em;
+                margin-top: 0
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            render(){
+
+                const noticias = [
+                {
+                    titulo: "1. Incompreendido",
+                    texto: "A maioria das pessoas simplesmente não o entendem.",
+                    obs:"",
+                },
+                {
+                    titulo: "2. Esmagamento Sensorial ",
+                    texto: "Às vezes seus sentidos são muito apurados e ao mesmo tempo hiper sensíveis.",
+                    obs:"",
+                },
+                {
+                    titulo: "3. Explosões de raiva",
+                    texto: "Podem acontecer em momentos de ansiedade extrema.",
+                    obs:"",
+                },
+                {
+                    titulo: "4. Explosões de choro",
+                    texto: "Também podem acontecer quando sobrecarregado de ansiedade.",
+                    obs:"(Muitas vezes o choro e a raiva são formas de expressar a frustração, e nada tem a ver com ódio ou tristeza)",
+                },
+                {
+                    titulo: "5. Momentos de silêncio",
+                    texto: "Muitas vezes você não consegue falar ou socializar.",
+                    obs:"",
+                },
+                {
+                    titulo: "6. Prevenção",
+                    texto: "Você não costuma ir a lugares que imagina serem difíceis de suportar.",
+                    obs:"(Por causa de multidões, barulhos etc.)",
+                },
+                {
+                    titulo: "7. Cabeça",
+                    texto: "Você é uma pessoa lógica, que pensa e analisa tudo.",
+                    obs:"",
+                },
+                {
+                    titulo: "8. Padrões",
+                    texto: "Na maneira como você olha para a vida e o mundo, você vê padrões em tudo.",
+                    obs:"",
+                },
+                {
+                    titulo: "9. Livro aberto",
+                    texto: "Quando confortável, você consegue ser extremamente aberto e honesto.",
+                    obs:"",
+                },
+                {
+                    titulo: "10. Papo reto",
+                    texto: "Você não joga conversa fora. Suas conversas são sempre objetivas e diretas.",
+                    obs:"(Geralmente busca-se algo prático no diálogo, como aprender ou ensinar algo)",
+                },
+                {
+                    titulo: "11. Amizade “normal” é alienante",
+                    texto: "Você costuma se sentir sozinho e vazio ao lidar com amizades de uma maneira “normal”.",
+                    obs:"",
+                },
+                {
+                    titulo: "12. Apegado",
+                    texto: "Quando você encontra verdadeiras amizades, você pode ser um tanto pegajoso ou mandão.",
+                    obs:"",
+                },
+                {
+                    titulo: "13. Desajeitado sobre o toque social",
+                    texto: "Você raramente toca nas pessoas e se faz, dificilmente gosta.",
+                    obs:"(Relações mais próximas, mais íntimas, construídas com muito tempo e paciência, tendem a quebrar essa barreira)"
+                },
+                {
+                    titulo: "14. Padrões de fala monótona ou hipnótica.",
+                    texto: "Quando confortável, você consegue ser extremamente aberto e honesto.",
+                    obs:"",
+                },
+                {
+                    titulo: "15. Forte auto-disciplina",
+                    texto: "Você mantém as rotinas, por você escolhidas.",
+                    obs:"",
+                },
+                {
+                    titulo: "16. Deu branco!",
+                    texto: "A mente fica como vazia, sem resposta imediata. Pode acontecer quando surpreso ou sobrecarregado emocionalmente.",
+                    obs:"",
+                },
+                {
+                    titulo: "17. Imaginação infantil",
+                    texto: "Uma parte de você nunca envelhece. E sempre haverá um ar de inocência no seu entendimento do mundo e da vida.",
+                    obs:"",
+                },
+                {
+                    titulo: "18. Cabelo ruim",
+                    texto: "Você simplesmente não consegue ajeitá-lo.",
+                    obs:"(Ok, essa parte não é assim tão baseada em dados, mas um certo desleixo pela aparência é comum nos aspies)",
+                },
+                {
+                    titulo: "19. Interesses excêntricos",
+                    texto: "Passatempos ou coleções incomuns.",
+                    obs:"",
+                },
+                {
+                    titulo: "20. Hábitos alimentares repetitivos",
+                    texto: "Você sempre come a mesma coisa ou segue uma dieta rígida. E tende a ter aversão à certos sabores, texturas de alimentos e até mesmo ao som que fazem quando mastigadas.",
+                    obs:"",
+                },
+                {
+                    titulo: "21. Fazendo barulhos engraçados",
+                    texto: "Quando confortável, os sons que você cria carregam significado na comunicação.",
+                    obs:"(Em muitos casos, principalmente na infância, é comum a ecolalia)",
+                },
+                {
+                    titulo: "22. Inflexível sobre o tempo e os planos",
+                    texto: "Você enlouquece se os planos são alterados inesperadamente.",
+                    obs:"",
+                },
+            ]
+
+            const final = noticias.map(noticia => <Colecao noticia={noticia}/>)
+
+                return(
+                    <div>
+                       <h2>22 SINAIS E TRAÇOS DE SÍNDROME DE ASPERGER EM ADULTOS</h2>
+                       <hr />
+                       {final}
+                    </div>
+                )
+            }
+        }
+
+        class Colecao extends React.Component{
+            constructor(props){
+                super(props)
+            }
+
+            render(){
+                return(
+                    <div>
+                       <h3>{this.props.noticia.titulo}</h3>
+                       <p>{this.props.noticia.texto}</p>
+                       <p>{this.props.noticia.obs}</p>
+                    </div>
+                )
+            }
+        }
+
+        const root=document.getElementById('root');
+        ReactDOM.render(<App />, root);
+
+    </script>
+</body>
+</html>
