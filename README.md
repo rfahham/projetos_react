@@ -39,4 +39,3 @@ https://reactjs.org/
 https://pt-br.reactjs.org/
 
 CDN - Content Delivery Network 
-

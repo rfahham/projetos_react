@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - ReactJS - INCLUIR O REACTDOM RENDER DENTRO DE UM COMPONENTE</title>
+    <style>
+        body {
+            background-color: rgb(46, 41, 41);
+            margin-left: 20%;
+            margin-right: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:rgb(209, 208, 208);
+        }
+        h1,h2.h3,h4,h5,h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        function Tempo(){
+
+            // JSX a apresentar
+
+            const conteudo = (
+                <div>
+                    <h3>EXIBINDO A HORA ATUAL</h3>
+                        <hr/>
+                        <p>Data: {new Date().toLocaleDateString()}, Hora: {new Date().toLocaleTimeString()}</p>
+                        <p>Hora: {new Date().toLocaleTimeString()}</p>
+                </div>
+            )
+
+            ReactDOM.render(
+                conteudo,
+                document.getElementById('root')
+            )
+        }
+            
+        setInterval(Tempo, 1000);
+
+    </script>
+</body>
+</html>

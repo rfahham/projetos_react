@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>005 - ReactJS - EXEMPLO DE UM CLASS COMPONENT</title>
+    <style>
+            body {
+                background-color: rgb(46, 41, 41);
+                margin-left: 20%;
+                margin-right: 20%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(209, 208, 208);
+            }
+            h1,h2.h3,h4,h5,h6 {
+                text-align: center;
+            }
+            p {
+                text-align: justify;
+                font-size: 20px;
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+
+        class ComponentA extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>O que é Lorem Ipsum?</h1>
+                            <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.</p>
+                    </div>
+                )
+            }
+        }
+
+        class ComponentB extends React.Component{
+            render(){
+                return(
+                    <div>
+                            <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.</p>
+                    </div>
+                )
+            }
+        }
+
+        class ComponentC extends React.Component{
+            render(){
+                return(
+                    <div>
+                            <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.</p>
+                    </div>
+                )
+            }
+        }
+
+        class MeuComponente extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <ComponentA/>
+                        <hr/>
+                        <ComponentB/>
+                        <hr/>
+                        <ComponentC/>
+
+                    </div>
+                )
+            }
+        }
+        
+        const root=document.getElementById('root');
+        ReactDOM.render(<MeuComponente/>, root);
+        
+    </script>
+</body>
+</html>

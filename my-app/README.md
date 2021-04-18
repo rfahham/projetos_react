@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+Para habilitar o Scripts do NPM
+
+http://www.matthiassommer.it/programming/testing/run-npm-scripts-in-visual-studio-code-with-a-click-of-a-button/
+
+A segunda opção ainda mais conveniente é ir para Arquivo -> Preferências -> Configurações (CTRL +,) e ativar o npm.enableScriptExplorer . Agora, o VS Code pesquisará automaticamente seu arquivo package.json e extrairá todos os comandos da seção de scripts.

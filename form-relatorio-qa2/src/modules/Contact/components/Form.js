@@ -126,7 +126,6 @@ const Form = props => {
             </ul>
       </div>
 
-      
       <div className="form-group">
         <button
           type="submit"
@@ -142,8 +141,6 @@ const Form = props => {
           Reset
         </button>
       </div>
-
-
     </form>
   )
 }

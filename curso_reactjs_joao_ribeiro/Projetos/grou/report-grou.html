@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adição</title>
+    <style>
+            body {
+                background-color: rgb(46, 41, 41);
+                margin-left: 20%;
+                margin-right: 20%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(209, 208, 208);
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+    // Uma variável !!!
+    // let jan = "";
+    // let jan = {};
+    // Aplico a variável 
+    // {jan} dentro do render
+
+        class Adicao extends React.Component{
+            render() {
+                return(
+                    <div>
+                        <h1>Relatório de testes realizados 2021</h1>
+                        <hr/>
+                        <h3>Primeiro Trimestre</h3>
+                        <p>Janeiro = {this.props.jan}</p>
+                        <p>Fevereiro = {this.props.fev} </p>
+                        <p>Março = {this.props.mar}</p>
+                        <p>Total do trimestre = {this.props.jan + this.props.fev + this.props.mar}</p>
+                        <p>Média de testes/dia = {this.props.jan + this.props.fev + this.props.mar / this.props.media}</p>  
+                        <hr/>
+                        <h3>Segundo Trimestre</h3>
+                        <p>Abril = {this.props.abr}</p>
+                        <p>Maio = {this.props.mai} </p>
+                        <p>Junho = {this.props.jun}</p>
+                        <p>Total do trimestre = {this.props.abr + this.props.mai + this.props.jun}</p>
+                        <p>Média de testes/dia = {this.props.abr + this.props.mai + this.props.jun / this.props.media}</p>  
+                        <hr/>
+                        <h3>Terceiro Trimestre</h3>
+                        <p>Julho = {this.props.jul}</p>
+                        <p>Agosto = {this.props.ago} </p>
+                        <p>Setembro = {this.props.set}</p>
+                        <p>Total do trimestre = {this.props.jul + this.props.ago + this.props.set}</p>
+                        <p>Média de testes/dia = {this.props.jul + this.props.ago + this.props.set / this.props.media}</p>  
+                        <hr/>
+                        <h3>Quarto Trimestre</h3>
+                        <p>Outubro = {this.props.out}</p>
+                        <p>Novembro = {this.props.nov} </p>
+                        <p>Dezembro = {this.props.dez}</p>
+                        <p>Total do trimestre = {this.props.out + this.props.nov + this.props.dez}</p>
+                        <p>Média de testes/dia = {this.props.out + this.props.nov + this.props.dez / this.props.media}</p>  
+                        <hr/>
+                    </div>
+                )
+            }
+        }
+        const root=document.getElementById('root');
+        ReactDOM.render(<Adicao 
+        jan={331} 
+        fev={89} 
+        mar={326} 
+        abr={1} 
+        mai={2} 
+        jun={3} 
+        jul={4} 
+        ago={5} 
+        set={6} 
+        out={7} 
+        nov={8} 
+        dez={9} 
+        media={90}/>,
+         root);
+
+    </script>
+</body>
+</html>

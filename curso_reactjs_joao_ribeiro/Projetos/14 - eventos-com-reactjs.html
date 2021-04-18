@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>014 - ReactJS - INTRODUÇÃO AOS EVENTOS EM REACTJS</title>
+    <style>
+        body {
+            background-color: rgb(46, 41, 41);
+            margin-left: 20%;
+            margin-right: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:rgb(209, 208, 208);
+        }
+        h1,h2.h3,h4,h5,h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        button {
+            border-radius: 10%;
+            height: 30px;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            constructor(){
+                super()
+                this.state={
+                    nome: "Ricardo"
+                }
+
+                this.cmd_click = this.cmd_click.bind(this)
+            }
+
+            cmd_click(){
+                this.setState({nome: "Ricardo Fahham"})
+            }
+
+
+            render(){
+                return(
+                    <div>
+                        <h2>014 - ReactJS - INTRODUÇÃO AOS EVENTOS EM REACTJS</h2>
+                        <hr/>
+                        <p>Alterando o estado do state</p>
+                        <p>O State tem um valor setado e após clicar no botão o valor é alterado.</p>
+
+                        <p>Nome: {this.state.nome}</p>
+                        <button onClick={this.cmd_click}>Clique aqui</button>
+
+                        
+                    </div>
+                )
+            }
+        }
+            
+        const root = document.getElementById('root');
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</body>
+</html>

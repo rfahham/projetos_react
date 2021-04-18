@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>012 - ReactJS - DIFERENÇA ENTRE PROPS E STATE</title>
+    <style>
+        body {
+            background-color: rgb(46, 41, 41);
+            margin-left: 20%;
+            margin-right: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:rgb(209, 208, 208);
+        }
+        h1,h2.h3,h4,h5,h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            constructor(){
+                super()
+                this.state = {
+                    nome : "João"
+                }
+            }
+            
+            render(){
+// Definindo um novo valor para a variável nome
+                this.state.nome = "Ricardo"
+// Utilizando Nome como State
+// Utilizando Idade como Props
+                return(
+                    <div>
+                        <h3>012 - ReactJS - DIFERENÇA ENTRE PROPS E STATE</h3>
+                        <hr/>
+                        <p>O State é definido dentro de um CONSTRUCTOR e pode ser modificado através de um "this.state.nome = "Ricardo", dentro da classe.</p>
+                        <p>O Prop é definido dentro do ReactDOM.render e não pode ser modificado. </p>
+                        <p>Todas as propriedades (props) tem um valor fixo</p>
+                        <p>Console: "Cannot assign to read only property"</p>
+                        <hr/>
+                        <p>Nome: {this.state.nome}</p>
+                        <p>Idade: {this.props.idade}</p>
+                    </div>
+                )
+            }
+        }
+// Definindo idade como props, mas o valor entra como uma string, não pode ser manipulada.
+        const root = document.getElementById('root');
+        ReactDOM.render(<App idade="45"/>, root);
+
+    </script>
+</body>
+</html>

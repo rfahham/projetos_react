@@ -1,0 +1,77 @@
+<!-- https://www.youtube.com/watch?v=VQZ0qJSuWfc&list=PLXik_5Br-zO9YVs9bxi7zoQlKq59VPTX1&index=29 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>029 - ReactJS - EXEMPLO COM SELECT</title>
+    <style>
+        body {
+            background-color: rgb(46, 41, 41);
+            margin-left: 20%;
+            margin-right: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:rgb(209, 208, 208);
+        }
+        h1,h2.h3,h4,h5,h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class MeuComponente extends React.Component{
+
+            constructor(){
+                super()
+                this.state={
+                    item: "Café Pequeno"
+                }
+            }
+
+            alterarItem = event =>{
+                this.setState({item: event.target.value})
+            }
+
+            render(){
+                return(
+                    <div>
+                        <h2>029 - ReactJS - EXEMPLO COM SELECT</h2>
+                        <hr/>
+                        <p>EXEMPLO COM SELECT</p>
+
+                        <p>Escolha a opção:</p>
+                        <select value={this.state.item} onChange={this.alterarItem}>
+                            <option value="Café Pequeno">Café Pequeno</option>
+                            <option value="Café Médio">Café Médio</option>
+                            <option value="Café Grande">Café Grande</option>
+                        </select>
+
+                        <p>O Item selecionado foi: {this.state.item}</p>
+                        
+                    </div>
+                )
+            }
+        }
+        const root=document.getElementById('root');
+        ReactDOM.render(<MeuComponente/>, root);
+        
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>004 - FUNCTION COMPONENT</title>
+    <style>
+            body {
+                background-color: rgb(46, 41, 41);
+                margin-left: 20%;
+                margin-right: 20%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(209, 208, 208);
+            }
+        </style>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="root1"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        function ComponentA(){
+            return(
+                <h1>Primeiro Componente</h1>
+            )
+        }
+
+        function ComponentB(){
+            return(
+                <h1>Segundo Componente</h1>
+            )
+        }
+
+        function MeuComponent(){
+            return(
+                <div>
+                    <ComponentA/>
+                    <ComponentB/>
+                 </div>   
+            )
+        }
+
+        const root=document.getElementById('root');
+        ReactDOM.render(<MeuComponent/>, root);
+
+
+    </script>
+</body>
+</html>

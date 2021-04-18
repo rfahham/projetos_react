@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>019 - ReactJS - PASSAR ARGUMENTOS DE CHILD PARA PARENT COMPONENT</title>
+    <style>
+        body {
+            background-color: rgb(46, 41, 41);
+            margin-left: 20%;
+            margin-right: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:rgb(209, 208, 208);
+        }
+        h1,h2.h3,h4,h5,h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        button {
+            height: 30px;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+        
+        // PARENT
+        class App extends React.Component{
+
+            metodo(texto){
+                console.log(texto);
+            }
+
+            render(){
+                return(
+                    <div>
+                        <Child evento={this.metodo}/>
+                    </div>
+                    
+                )
+            }
+        }
+        //CHILD
+        class Child extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>019 - ReactJS - PASSAR ARGUMENTOS DE CHILD PARA PARENT COMPONENT</h1>
+                        <hr/>
+                        <p>Mostra no console o texto: Olá Mundo !!!</p>
+                        <button onClick = {() => this.props.evento('Olá Mundo !!!')}>Clicar</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <App />, root
+            );
+        document.getElementById('root');
+
+    </script>
+</body>
+</html>

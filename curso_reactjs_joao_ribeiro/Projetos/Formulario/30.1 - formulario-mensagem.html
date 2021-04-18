@@ -1,0 +1,117 @@
+<!-- https://www.youtube.com/watch?v=anjbi21rVRw -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>030 - ReactJS - FORMULÁRIO DE LOGIN</title>
+    <style>
+        body {
+            background-color: rgb(46, 41, 41);
+            margin-left: 20%;
+            margin-right: 20%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:rgb(209, 208, 208);
+        }
+        h1,h2,h3,h4,h5,h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 20px;
+        }
+        form {
+            text-align: center;
+            border-style: double;
+            padding: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        textarea{
+            margin-top: 5px;
+            padding: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+
+        class App extends React.Component{
+
+            constructor(){
+                super()
+                this.state={
+                    name: '',
+                    email: '',
+                    mensagem: ''
+                }
+            }
+
+            alterarUsarname = event => {
+                this.setState({name: event.target.value})
+            }
+
+            alteraremail = event => {
+                this.setState({email: event.target.value})
+            }
+
+            alterarmensagem = event => {
+                this.setState({mensagem: event.target.value})
+            }
+
+
+            submeterForm = event => {
+                console.log("Name: " + this.state.name)
+                console.log("Email: " + this.state.email)
+                console.log("Mensagem: " + this.state.mensagem)
+                event.preventDefault()
+            }                   
+
+            render(){
+                return(
+                    <div>
+                        
+                        <h2>Enviar Mensagem</h2>
+
+                    <form onSubmit={this.submeterForm}>
+                       <input type="text" value={this.state.usarname} onChange={this.alterarUsarname} placeholder="Name"/>
+                       <br/>
+                       <input type="text" value={this.state.email} onChange={this.alteraremail} placeholder="Email"/>
+                       <br/>
+                       <textarea value={this.state.mensagem} onChange={this.alterarmensagem}name="" id="" cols="60" rows="10" placeholder="Digite aqui sua mensagem:"/>
+                       <hr/>
+                       <input type="submit" value="Entrar"/>
+
+                       
+                    </form>
+                    
+
+                    <p>* resultado visualizado no console com: command+option+J</p>
+
+                    
+                    </div>
+                )
+            }
+        }
+        const root=document.getElementById('root');
+        ReactDOM.render(<App/>, root);
+        
+    </script>
+</body>
+</html>
+
+
